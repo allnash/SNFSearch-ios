@@ -16,9 +16,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gp-xb-e1Z">
-                        <rect key="frame" x="255" y="44" width="57" height="17"/>
+                        <rect key="frame" x="232" y="44" width="80" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="57" id="dEy-f1-Avq"/>
+                            <constraint firstAttribute="width" constant="80" id="dEy-f1-Avq"/>
                             <constraint firstAttribute="height" constant="17" id="tAY-hk-9Er"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="iJM-6f-G4Y">
-                        <rect key="frame" x="233" y="43" width="19" height="17"/>
+                        <rect key="frame" x="205" y="43" width="19" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="33F-pG-ey7"/>
                             <constraint firstAttribute="width" constant="19" id="eb0-fJ-vGj"/>
@@ -48,7 +48,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="9KP-CO-3c4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="9qr-wX-axg"/>
-                    <constraint firstItem="1Gp-xb-e1Z" firstAttribute="leading" secondItem="iJM-6f-G4Y" secondAttribute="trailing" constant="3" id="JxJ-MW-Y1N"/>
+                    <constraint firstItem="1Gp-xb-e1Z" firstAttribute="leading" secondItem="iJM-6f-G4Y" secondAttribute="trailing" constant="8" id="JxJ-MW-Y1N"/>
                     <constraint firstItem="9KP-CO-3c4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Mac-WJ-2da"/>
                     <constraint firstItem="2VV-cz-bCI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="W9k-dO-tPo"/>
                     <constraint firstAttribute="bottom" secondItem="2VV-cz-bCI" secondAttribute="bottom" id="e8g-fz-uEC"/>
@@ -61,6 +61,10 @@
                     <constraint firstItem="2VV-cz-bCI" firstAttribute="top" secondItem="iJM-6f-G4Y" secondAttribute="bottom" constant="7" id="zMf-Nx-it9"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="facilityNameLabel" destination="9KP-CO-3c4" id="BbA-9L-867"/>
+                <outlet property="milesLabel" destination="1Gp-xb-e1Z" id="3MD-YF-3oL"/>
+            </connections>
             <point key="canvasLocation" x="280" y="278"/>
         </tableViewCell>
     </objects>

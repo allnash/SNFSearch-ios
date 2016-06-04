@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551CD7771D02A07700EBC1D0 /* SNFAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 551CD7761D02A07700EBC1D0 /* SNFAppConfig.m */; };
 		55349B031D027F6E002FCDFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55349B021D027F6E002FCDFF /* main.m */; };
 		55349B061D027F6E002FCDFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55349B051D027F6E002FCDFF /* AppDelegate.m */; };
 		55349B091D027F6E002FCDFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55349B081D027F6E002FCDFF /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		551CD7751D02A07700EBC1D0 /* SNFAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNFAppConfig.h; sourceTree = "<group>"; };
+		551CD7761D02A07700EBC1D0 /* SNFAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNFAppConfig.m; sourceTree = "<group>"; };
 		55349AFE1D027F6E002FCDFF /* SNFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55349B021D027F6E002FCDFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55349B041D027F6E002FCDFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				55349B391D027FF7002FCDFF /* SLParallaxController */,
-				55349B381D027FBE002FCDFF /* New Group */,
+				55349B381D027FBE002FCDFF /* API */,
 				55349B041D027F6E002FCDFF /* AppDelegate.h */,
 				55349B051D027F6E002FCDFF /* AppDelegate.m */,
 				55349B071D027F6E002FCDFF /* ViewController.h */,
@@ -161,11 +164,13 @@
 			path = SNFSearchUITests;
 			sourceTree = "<group>";
 		};
-		55349B381D027FBE002FCDFF /* New Group */ = {
+		55349B381D027FBE002FCDFF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				551CD7751D02A07700EBC1D0 /* SNFAppConfig.h */,
+				551CD7761D02A07700EBC1D0 /* SNFAppConfig.m */,
 			);
-			name = "New Group";
+			name = API;
 			sourceTree = "<group>";
 		};
 		55349B391D027FF7002FCDFF /* SLParallaxController */ = {
@@ -308,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551CD7771D02A07700EBC1D0 /* SNFAppConfig.m in Sources */,
 				55349B091D027F6E002FCDFF /* ViewController.m in Sources */,
 				55349B3C1D027FF7002FCDFF /* SLParallaxController.m in Sources */,
 				55349B061D027F6E002FCDFF /* AppDelegate.m in Sources */,
@@ -536,6 +542,7 @@
 				55349B2D1D027F6E002FCDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55349B2E1D027F6E002FCDFF /* Build configuration list for PBXNativeTarget "SNFSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +551,7 @@
 				55349B301D027F6E002FCDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55349B311D027F6E002FCDFF /* Build configuration list for PBXNativeTarget "SNFSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +560,7 @@
 				55349B331D027F6E002FCDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

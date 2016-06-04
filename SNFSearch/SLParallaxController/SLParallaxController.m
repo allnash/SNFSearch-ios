@@ -7,6 +7,7 @@
 //
 
 #import "SLParallaxController.h"
+#import "SNFAppConfig.h"
 #import "SNFCell.h"
 
 #define SCREEN_HEIGHT_WITHOUT_STATUS_BAR     [[UIScreen mainScreen] bounds].size.height - 20
@@ -56,8 +57,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableData = [@[] mutableCopy];
     [self setupTableView];
     [self setupMapView];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"SNFProviderListUpdated"
+                                               object:nil];
+    
+}
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+    if ([[notification name] isEqualToString:@"SNFProviderListUpdated"]){
+        self.tableData = [[SNFAppConfig sharedInstance].snfDictionary valueForKey:@"facilities"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -227,7 +248,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return  self.tableData.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -241,7 +262,7 @@
     
     NSString *identifier = @"SNFCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    SNFCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if(indexPath.row == 0){
         identifier = @"firstCell";
@@ -265,7 +286,8 @@
             cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         }
     }
-    //[[cell textLabel] setText:@"Hello World !"];
+    
+    [cell initializeCellWithItem:[self.tableData objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -315,6 +337,8 @@
         [self zoomToUserLocation:self.mapView.userLocation
                      minLatitude:self.latitudeUserUp
                         animated:self.userLocationUpdateAnimated];
+    [[SNFAppConfig sharedInstance] loadSNFwithLat :[NSString stringWithFormat:@"%f",userLocation.coordinate.latitude] withLon:[NSString stringWithFormat:@"%f",userLocation.coordinate.longitude] andRadius:@"10.0"];
+
 }
 
 #pragma mark - UIGestureRecognizerDelegate

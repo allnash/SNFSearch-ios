@@ -21,4 +21,12 @@
     // Configure the view for the selected state
 }
 
+-(void)initializeCellWithItem:(NSDictionary *)dict{
+    
+    self.facilityNameLabel.text =  [dict valueForKey:@"name"];
+    self.milesLabel.text  =  [NSString stringWithFormat:@"%.02f%@",[[dict valueForKey:@"distance"] floatValue], @" miles"];
+    
+}
+
+
 @end

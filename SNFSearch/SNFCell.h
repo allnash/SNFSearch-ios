@@ -10,4 +10,9 @@
 
 @interface SNFCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *facilityNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *milesLabel;
+
+-(void)initializeCellWithItem:(NSDictionary *)dict;
+
 @end
